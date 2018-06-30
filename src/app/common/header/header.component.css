@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.example-icon {
+    padding: 0 14px;
+  }
+
+.example-icon:hover {
+    cursor: pointer;
+} 
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .toolbar_header {
+    height: 90px;
+    padding-top: 15px;
+    font-size: 30px;
+    font-family: cursive;
+    background-color: #990E71;
+  }
+

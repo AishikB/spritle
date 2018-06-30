@@ -1,0 +1,57 @@
+<mat-card>
+<mat-tab-group>
+    <mat-tab label="Existing User"> 
+<mat-card>
+<mat-toolbar class="toolbar_header" color="primary">
+    <mat-toolbar-row>
+        Login
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-card>
+    <form #loginForm = "ngForm">
+        <mat-form-field class="login-style">
+            <input matInput placeholder="Username" [(ngModel)]="username" 
+            name="uname" #uname="ngModel">
+        </mat-form-field>
+        <mat-form-field class="login-style">
+            <input matInput type="{{pass_type}}" placeholder="Password" [(ngModel)]="password" 
+            name="pass" #pass="ngModel">
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="checked" name="cb" (change)="showPassword()">Show Password</mat-checkbox>
+        <br>
+        <br>
+        <div *ngIf="flag">
+          <p class="err_msg">Either your username or password is incorrect</p>
+        </div>
+        
+        <button mat-raised-button color="primary" (click)="onLogin()">Login</button>
+    </form>
+  </mat-card>
+</mat-card>
+</mat-tab>
+
+<mat-tab  label="New User">
+    <mat-card>
+        <form #registrationForm="ngForm">
+                <mat-toolbar class="toolbar_header" color="primary">
+                        <mat-toolbar-row>
+                            Register
+                        </mat-toolbar-row>
+                      </mat-toolbar>
+                      <mat-card>
+            <mat-form-field class="login-style">
+                <input matInput placeholder="Enter your username" [(ngModel)]="newUser" 
+                name="nuser" #nuser="ngModel">
+            </mat-form-field>
+            <div *ngIf="userExists">
+            <p class="err_msg">Username already in use</p>
+        </div>
+            <button mat-raised-button color="primary" (click)="onRegistration()">Register</button>
+        
+        
+        </mat-card>
+    </form>
+    </mat-card>
+</mat-tab>
+</mat-tab-group>
+</mat-card>

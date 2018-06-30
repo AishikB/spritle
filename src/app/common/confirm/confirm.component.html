@@ -1,0 +1,14 @@
+<mat-toolbar class="toolbar_header" color="primary">
+    <mat-toolbar-row>
+       Confirmation!!
+    </mat-toolbar-row>
+  </mat-toolbar>
+    <mat-card>
+      <p>{{data.message}}</p>
+      <div class="btns-div">
+        <span class="yes_btn_span">
+      <button mat-raised-button class="yes_btn" (click)="onYes()">Yes</button>
+    </span>
+      <button mat-raised-button class="no_btn" [mat-dialog-close]="data.response" (click)="onNo()">No</button>
+    </div>
+    </mat-card>

@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-toolbar class="toolbar_header" color="primary">
+        <mat-toolbar-row>
+            <span class="icon_spacer">
+                <mat-icon class="example-icon">mood</mat-icon>
+            </span>
+          <span>Hello {{username}}!!</span>
+          <!-- <span class="example-spacer"></span> -->
+          <span class="icon_spacer_2">
+          <mat-icon class="example-icon">mood</mat-icon>
+        </span>
+        </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-card>
+            <div class="expression_container">
+                <div *ngIf="displayPost">
+            <form (ngSubmit)="onSubmit()" #postForm="ngForm">
+                <mat-form-field class="post_style">
+                    <textarea matInput placeholder="What exciting did you do today??" [(ngModel)]="post" 
+                    name="name" #name="ngModel"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="onPost()">Post</button>
+            </form>
+        </div>
+        <div *ngIf="!displayPost">
+            <mat-card>
+                <mat-card-title class="post_name">{{username}}</mat-card-title>
+                <div  class="post_div">
+            <p class="post_text">{{post}}</p>
+            
+            <mat-icon matBadge={{likes}} matBadgeColor="accent" class="edit-icon" (click)="onLike()">thumb_up</mat-icon>
+          <mat-icon matSuffix class="edit-icon" (click)="onEdit()">edit</mat-icon>
+            <mat-icon matSuffix class="edit-icon" (click)="onDelete()">delete</mat-icon>
+        </div>
+            <mat-divider></mat-divider>
+            <div class="comments-set" *ngFor="let c of commentArray; let i=index">
+                <mat-card>
+                    <mat-card-title class="friend_name">Friend {{i+1}}</mat-card-title>
+                <p class="comment-text">{{c}}</p>
+                <mat-icon matBadge={{commnetLikeArray[i]}} matBadgeColor="warn" class="edit-icon" (click)="onCommentLike(i)">thumb_up</mat-icon>
+                  <mat-icon matSuffix class="edit-icon" (click)="onCommentDelete(i)">delete</mat-icon>
+            </mat-card>
+            </div>
+        
+        
+           
+            <form #commentForm="ngForm">
+                    <mat-form-field class="comment-style">
+                        <input matInput placeholder="Comment here !!" [(ngModel)]="comment" 
+                        name="cmnt" #cmnt="ngModel">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" (click)="onComment()">Comment</button>
+            </form>
+            
+
+            </mat-card>
+           
+        </div>
+        </div>
+        </mat-card>
+</mat-card>

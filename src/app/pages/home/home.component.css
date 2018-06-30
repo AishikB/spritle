@@ -1,0 +1,72 @@
+.icon_spacer {
+    padding-right: 17px;
+    padding-top: 10px;
+}
+
+.icon_spacer_2 {
+    padding-left: 17px;
+    padding-top: 10px;
+}
+
+.post_style {
+    width: 100%;
+}
+
+/* .expression_container {
+    margin: 5% 5%;
+  } */
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+mat-card {
+    
+}
+
+.comment-style {
+    padding-top: 5px;
+    width: 100%;
+}
+
+.post_text {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.post-div {
+    padding-bottom: 10px;
+}
+
+.comment-text {
+    font-style: oblique;
+}
+
+.comments-set {
+    padding-top: 10px;
+}
+
+
+
+.edit-icon {
+    color:blue;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+
+.edit-icon:hover {
+    color:red;
+    cursor: pointer;
+}
+
+.friend_name {
+    font-size: 15px;
+    font-weight: bold;
+    color: blueviolet;
+}
+
+.post_name {
+    font-size: 20px;
+    font-weight: bold;
+    color: blueviolet;
+}
